@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/tau5kil.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/EasePack.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomBounce.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomWiggle.min.js"></script>
+
+    <script src="scripts/app.js" defer></script>
+</head>
+<body>
+  <div id="splash-screen">
+    <img class="splash-gif" src="assets/KEY.gif" alt="Animation de démarrage">
+    <img class="splash-bg" src="assets/bg__menu.png" alt="" aria-hidden="true">
+    <button id="start-btn">Cliquez pour commencer</button>
+  </div>
+  <div id="game-screen">
+    <div class="logo">
+    <img src="assets/1.png" alt="Logo normal" class="logo_base">
+    <img src="assets/2.png"  alt="Logo survol"  class="logo_hover">
+  </div>
+    <div class="menu" id="menu">
+      <button class="menu-btn carnet-toggle" id="menu-btn-1"><img src="assets/note_icon.png" alt=""></button>
+      <button class="menu-btn inventory-toggle" id="menu-btn-2"><img src="assets/inventory_icon.png" alt=""></button>
+    </div>
+    <div class="door-container">
+      <button class="door int-1">Jardin</button>
+      <button class="door ext-1">Réserve</button>
+      <button class="door int-3">Atelier</button>
+      <button class="door int-2">Atelier</button>
+    </div>
+    <main class="content">
+        <!------------------SCENE------------------>
+        <div class="overlay-utile"></div>
+        <div class="grid">
+            <!-- scène : JARDIN -->
+            <div class="scene__wrapper js-scene-3">
+                <div class="scene scene--garden">
+                    <img class="scene-jardin-bg" src="assets/outside.png" alt="Modèle 3D Axono">
+                    <!--------VICTOR_HITBOX-------->
+                    <div class="drop-zone_victor" data-item="interaction--victor-hitbox">
+                        <div class="craft-slot" data-slot="victor"></div>
+                    </div>                    
+                </div>
+            </div>          
+            <!-- scène : ATELIER -->
+            <div class="scene__wrapper js-scene-1">
+                <div class="scene scene--workshop">
+
+                    <!--DECORS SCENE-->
+                    <img class="scene-atelier-bg" src="assets/WorkshopA_decor.png" alt="WorkshopA">
+
+                    <!--TEST HERE-->
+                    <button class="point point--1 js-point" data-item="interaction--wall"><span>Cliquer sur le tableau</span></button>
+                    <!--MISSION 1-->
+                    <button class="point point--11 js-point" data-item="interaction--bec"><span>Objet à définir</span></button>
+                    <button class="point point--12 js-point" data-item="interaction--pelle"><span>Objet à définir</span></button>
+                    <button class="point point--13 js-point" data-item="interaction--casier"><span>Objet à définir</span></button>
+                    <button class="point point--14 js-point" data-item="interaction--diable"><span>Objet à définir</span></button>
+
+                    <img class="workshopA-image" src="assets/item_scene_nom-item.png" data-item="interaction--bec">
+                    <img class="workshopA-image" src="assets/item_scene_nom-item.png" data-item="interaction--pelle">
+                    <img class="workshopA-image" src="assets/item_scene_nom-item.png" data-item="interaction--casier">
+                    <img class="workshopA-image" src="assets/item_scene_nom-item.png" data-item="interaction--diable">
+
+                    <!--MISSION 2-->
+                    <button class="point point--21 js-point" data-item="interaction--motte"><span>Objet à définir</span></button>
+                    <button class="point point--22 js-point" data-item="interaction--tableau"><span>Objet à définir</span></button>
+                    <button class="point point--23 js-point" data-item="interaction--mur"><span>Objet à définir</span></button>
+                    <button class="point point--24 js-point" data-item="interaction--boite_piece_rechange"><span>Objet à définir</span></button>
+                    <button class="point point--25 js-point" data-item="interaction--cle"><span>Objet à définir</span></button>
+
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--motte">
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--tableau">
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--mur">
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--boite_rechange">
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--cle">
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--yeux_victor">
+
+                    <!--MISSION 3-->
+                    <button class="point point--31 js-point" data-item="interaction--vrac_metal"><span>Objet à définir</span></button>
+                    <button class="point point--32 js-point" data-item="interaction--meuleuse"><span>Objet à définir</span></button>
+                    <button class="point point--33 js-point" data-item="interaction--marteau"><span>Objet à définir</span></button>
+                    <button class="point point--34 js-point" data-item="interaction--peinture"><span>Objet à définir</span></button>
+                    <button class="point point--35 js-point" data-item="interaction--etablis"><span>Objet à définir</span></button>
+
+                    <img class="workshopA-image" src="assets/item_scene_nom-item.png" data-item="interaction--vrac_metal">
+                    <img class="workshopA-image" src="assets/item_scene_nom-item.png" data-item="interaction--meuleuse">
+                    <img class="workshopA-image" src="assets/item_scene_nom-item.png" data-item="interaction--marteau">
+                    <img class="workshopA-image" src="assets/item_scene_nom-item.png" data-item="interaction--peinture">
+                    <img class="workshopA-image" src="assets/item_scene_nom-item.png" data-item="interaction--etablis">
+
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--aile_step_0">
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--aile_step_1">
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--aile_step_2">
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--aile_step_3">
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--aile_step_done">
+
+                    <!--MISSION 3-->
+                    <button class="point point--41 js-point" data-item="interaction--post"><span>Objet à définir</span></button>
+                    <button class="point point--42 js-point" data-item="interaction--mask"><span>Objet à définir</span><button>   
+                    <button class="point point--43 js-point" data-item="interaction--victor"><span>Objet à définir</span><button>   
+                      
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--post">
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--mask">      
+                    <img class="workshopA-image hidden" src="assets/item_scene_nom-item.png" data-item="interaction--victor">                   
+                </div>
+            </div>
+            <!-- scène : RESERVE -->
+            <div class="scene__wrapper js-scene-2">
+                <div class="scene scene--closet">
+                    <img class="scene-reserve-bg" src="assets/WorkshopB_decor.png" alt="Modèle 3D Axono">
+                </div>
+            </div>
+        </div>
+        <!------------------ANIMATION------------------>
+        <div class="animation">
+        </div>        
+        <!------------------INVENTAIRE------------------>
+        <div class="inventory-container hidden">
+            <div class="inventory">
+              <button class="inventory-btn-close" aria-label="Fermer l'inventaire">
+                <img src="assets/inventory-croix.png" alt="Fermer">
+              </button>
+
+              <img class="inventory-bg" src="assets/inventory.png" alt="inventory">
+
+              <!-- Titre superposé -->
+              <div class="inventory-title">Inventaire</div>
+
+              <!-- Grille des cases 15 cases (3 colonnes × 5 lignes) -->
+              <div class="inventory-slots">
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>     
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>     
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>     
+
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>     
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>     
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>     
+
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>     
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>     
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>     
+
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>     
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>     
+                <div class="inventory-slot-case"><img class="inventory-slot-case-img" src="assets/case.png" alt="case"></div>        
+              </div>
+            </div>
+        </div>
+        <!------------------CARNET------------------>
+        <div class="carnet-container hidden">
+          <div id="carnet">
+            <button class="carnet-btn-close" aria-label="Fermer le carnet">
+            <img src="assets/carnet-croix.png" alt="">
+            </button>
+            <!-- Page 0 -->
+            <div class="carnet-page active" id="page-0">
+              <img class="carnet-bg" src="assets/carnet-couverture.png" alt="Couverture">
+              <div class="text"></div>
+            </div>
+            <!-- Page 1 -->
+            <div class="carnet-page" id="page-1">
+              <img class="carnet-bg" src="assets/carnet-gauche.png" alt="Page de gauche">
+              <div class="text">
+                <h2 class="carnet-page-h2">Kalbut, c'est qui ?</h2>
+                <h3 class="carnet-page-h3">L'artiste : présentation personnelle</h3>
+                <div class="page-1-paragraphe carnet-page-paragraphe">
+                  <p>Salut ! Moi, c’est Max ! <span class="bold">Maxime Gesquière</span>, </p>
+                  <p>mais tout le monde m’appelle Kalbut. </p>
+                  <p>Chouette pseudo, hein !</p>
+                  <p>Je suis un <span class="bold">sculpteur animalier</span> liégeois.</p>
+                  <p>Mon truc à moi ? La bricole et la <span class="bold">récup</span>.</p>
+                  <p>Ça fait presque 10 ans que je transforme</p>
+                  <p>la ferraille en <span class="bold">bestioles vivantes</span>.</p>
+                  <p></p>
+                </div>
+              </div>
+              <img class="carnet-image1" src="assets/carnet-image1.png" alt="">
+              <img class="carnet-ligne" src="assets/carnet-ligne.png" alt="">
+              <img class="carnet-scotch1" src="assets/carnet-scotch.png" alt="">
+            </div>
+            <!-- Page 2 -->
+            <div class="carnet-page" id="page-2">
+              <img class="carnet-bg" src="assets/carnet-droite.png" alt="Page de droite">
+              <img class="carnet-image2" src="assets/carnet-image2.png" alt="">
+              <div class="carnet-nametag2">
+                <div class="nametag-container">
+                  <h2 class="carnet-nametag-text">Moi (Kalbut)</h2>
+                  <img class="carnet-nametag-img" src="assets/nametag.png" alt="">
+                </div>
+              </div>
+            </div>
+            <!-- Page 3 -->
+            <div class="carnet-page" id="page-3">
+              <img class="carnet-bg" src="assets/carnet-gauche.png" alt="Page de gauche">
+              <div class="text">
+                <h2 class="carnet-page-h2">Un sacré défi</h2>
+                <h3 class="carnet-page-h3">Le projet : "les sculptures dans la ville"</h3>
+                <div class="page-1-paragraphe carnet-page-paragraphe">
+                  <p>La <span class="bold">ville de Namur</span> m’a contacté pour</p>
+                  <p>réaliser <span class="bold">neuf sculptures animales</span> sur la</p>
+                  <p>faune locale et de taille monumentales !</p>
+                  <p>Bien sûr, j'ai dis oui tout de suite !</p>
+                  <p>C'est pour l'<span class="bold">été 2024</span>, ça me laisse six mois.</p>
+                  <p>Je vais récupèrer la ferraille chez un</p>
+                  <p>recycleur namurois — un projet <span class="bold">100 % local</span>.</p>  
+                </div>
+              </div>
+              <img class="carnet-image3" src="assets/carnet-image3.png" alt="">
+              <img class="carnet-ligne" src="assets/carnet-ligne.png" alt="">
+              <img class="carnet-scotch2" src="assets/carnet-scotch.png" alt="">
+            </div>
+            <!-- Page 4 -->
+            <div class="carnet-page" id="page-4">
+              <img class="carnet-bg" src="assets/carnet-droite.png" alt="Page de droite">
+              <div class="text">
+                <div class="page-4-paragraphe carnet-page-paragraphe">
+                  <p>Les sculptures resteront <span class="bold">en ville cet été</span>,</p>
+                  <p>le temps d'y rencontrer les habitants.</p>
+                  <p>Puis, elles reviendront hiberner à l’atelier.</p>
+                  <p>Au <span class="bold">printemps 2025</span>, elles repartirons</p>
+                  <p>et seront <span class="bold">de retour</span> en région de Namur.</p>
+                  <p>Où elles s'installeront <span class="bold">pour de bon</span>.</p>
+                </div>
+              </div>
+              <img class="carnet-image4" src="assets/carnet-image4.png" alt="">
+              <img class="carnet-tache4" src="assets/carnet-tache.png" alt="">
+            </div>
+            <!-- Page 5 -->
+            <div class="carnet-page" id="page-6">
+              <img class="carnet-bg" src="assets/carnet-gauche.png" alt="Page de droite">
+              <div class="text">
+                <h2 class="carnet-page-h2">Tuto Kalbuterie</h2>
+                <h3 class="carnet-page-h3">Le processus créatif</h3>
+                <div class="page-6-paragraphe carnet-page-paragraphe">
+                  <p>Toujours commencer par se ballader.</p>
+                  <p><span class="bold">Récupérer</span> la feraille un peu partout,</p>
+                  <p>et tout ramener à <span class="bold">l'atelier</span>.</p>
+                  <p>Un vieux cadre de vélo ou un tonneau</p>
+                  <p>rouillé, tout peut inspirer.</p>
+                  <p>Des <span class="bold">livres animaliers</span> et des <span class="bold">maquettes</span>,</p>
+                  <p>histoire de pas se gourer.</p>
+                  <p>Avec les outils, chaque pièce est préparé.</p>
+                  <p>Au final, tout <span class="bold">assembler</span> puis <span class="bold">souder</span>.</p>
+                </div>
+              </div>
+              <img class="carnet-scotch6" src="assets/carnet-scotch.png" alt="">
+              <img class="carnet-tache2" src="assets/carnet-tache2.png" alt="">
+              <img class="carnet-tache3" src="assets/carnet-tache3.png" alt="">
+              <img class="carnet-scotch6" src="assets/carnet-scotch.png" alt="">
+              <img class="carnet-ligne" src="assets/carnet-ligne.png" alt="">
+            </div>
+            <!-- Page 6 -->
+            <div class="carnet-page" id="page-7">
+              <img class="carnet-bg" src="assets/carnet-droite.png" alt="Page de gauche">
+                <div class="post-it-title">
+                  <h2 class="h2-post-it">À FAIRE</h2>
+                  <h3 class="h3-post-it">Pas oublier de réparer l’aile de Victor</h3>
+                </div>
+                <div class="page-7-paragraphe carnet-page-paragraphe">
+                  <p class="p-post-it">Dans la réserve y a des plaques à <span class="bold">récupérer</span>.</p>
+                  <p class="p-post-it">Si trop grande, faudra <span class="bold">découper</span>.</p>
+                  <p class="p-post-it"><span class="bold">Marteller</span> en douceur pour la courbe souhaitée.</p>
+                  <p class="p-post-it">Pour éviter les coupures, <span class="bold">poncer</span> les cotés.</p>
+                  <p class="p-post-it"><span class="bold">Peindre</span> le tout avec sa couleur préférée.</p>
+                </div>
+              <img class="carnet-post-it" src="assets/post-it.png" alt="">
+              <img class="carnet-scotch2" src="assets/carnet-scotch.png" alt="">
+            </div>
+            <!-- Page 7 -->
+            <div class="carnet-page" id="page-5">
+              <img class="carnet-bg" src="assets/carnet-gauche.png" alt="Page de gauche">
+              <div class="text">
+                <h3 class="carnet-page-h3">Les animaux de nos régions</h3>
+              </div>
+              <img class="carnet-image5" src="assets/carnet-image5.png" alt="">
+              <img class="carnet-ligne" src="assets/carnet-ligne.png" alt="">
+              <div class="carnet-nametag5">
+                <div class="nametag-container">
+                  <h2 class="carnet-nametag-text">Le jardin extraordinaire</h2>
+                  <img class="carnet-nametag-img" src="assets/nametag.png" alt="">
+                </div>
+              </div>
+
+            </div>
+            <!-- Page 8 -->
+            <div class="carnet-page" id="page-8">
+              <img class="carnet-bg" src="assets/carnet-droite.png" alt="Page de droite">
+              <div class="carnet-nametag6">
+                <div class="nametag-container">
+                  <h2 class="carnet-nametag-text">Dédé le bousier</h2>
+                  <img class="carnet-nametag-img" src="assets/nametag.png" alt="">
+                </div>
+              </div>
+              <img class="carnet-animaux" src="assets/animal-1.png" alt="">
+            </div>
+            <!-- Page 9 -->
+            <div class="carnet-page" id="page-9">
+              <img class="carnet-bg" src="assets/carnet-gauche.png" alt="Page de gauche">
+              <div class="carnet-nametag6">
+                <div class="nametag-container">
+                  <h2 class="carnet-nametag-text">Didier le bourdon</h2>
+                  <img class="carnet-nametag-img" src="assets/nametag.png" alt="">
+                </div>
+              </div>
+              <img class="carnet-animaux" src="assets/animal-2.png" alt="">
+            </div>
+            <!-- Page 10 -->
+            <div class="carnet-page" id="page-10">
+              <img class="carnet-bg" src="assets/carnet-droite.png" alt="Page de droite">
+              <div class="carnet-nametag6">
+                <div class="nametag-container">
+                  <h2 class="carnet-nametag-text">Hector le castor</h2>
+                  <img class="carnet-nametag-img" src="assets/nametag.png" alt="">
+                </div>
+              </div>
+              <img class="carnet-animaux" src="assets/animal-3.png" alt="">
+            </div>
+            <!-- Page 11 -->
+            <div class="carnet-page" id="page-11">
+              <img class="carnet-bg" src="assets/carnet-gauche.png" alt="Page de gauche">
+              <div class="carnet-nametag6">
+                <div class="nametag-container">
+                  <h2 class="carnet-nametag-text">Kadett la rainette</h2>
+                  <img class="carnet-nametag-img" src="assets/nametag.png" alt="">
+                </div>
+              </div>
+              <img class="carnet-animaux" src="assets/animal-4.png" alt="">
+            </div>
+            <!-- Page 12 -->
+            <div class="carnet-page" id="page-12">
+              <img class="carnet-bg" src="assets/carnet-droite.png" alt="Page de droite">
+              <div class="carnet-nametag6">
+                <div class="nametag-container">
+                  <h2 class="carnet-nametag-text">René la taupe</h2>
+                  <img class="carnet-nametag-img" src="assets/nametag.png" alt="">
+                </div>
+              </div>
+              <img class="carnet-animaux" src="assets/animal-5.png" alt="">
+            </div>
+            <!-- Page 13 -->
+            <div class="carnet-page" id="page-13">
+              <img class="carnet-bg" src="assets/carnet-gauche.png" alt="Page de gauche">
+              <div class="carnet-nametag6">
+                <div class="nametag-container">
+                  <h2 class="carnet-nametag-text">Gérard le renard</h2>
+                  <img class="carnet-nametag-img" src="assets/nametag.png" alt="">
+                </div>
+              </div>
+              <img class="carnet-animaux" src="assets/animal-6.png" alt="">
+            </div>
+            <!-- Page 14 -->
+            <div class="carnet-page" id="page-14">
+              <img class="carnet-bg" src="assets/carnet-droite.png" alt="Page de droite">
+              <div class="carnet-nametag6">
+                <div class="nametag-container">
+                  <h2 class="carnet-nametag-text">Martin le pêcheur</h2>
+                  <img class="carnet-nametag-img" src="assets/nametag.png" alt="">
+                </div>
+              </div>
+              <img class="carnet-animaux" src="assets/animal-7.png" alt="">
+            </div>
+            <!-- Page 15 -->
+            <div class="carnet-page" id="page-15">
+              <img class="carnet-bg" src="assets/carnet-gauche.png" alt="Page de gauche">
+              <div class="carnet-nametag6">
+                <div class="nametag-container">
+                  <h2 class="carnet-nametag-text">Léon le héron</h2>
+                  <img class="carnet-nametag-img" src="assets/nametag.png" alt="">
+                </div>
+              </div>
+              <img class="carnet-animaux" src="assets/animal-8.png" alt="">
+            </div>
+            <!-- Page 16 -->
+            <div class="carnet-page" id="page-16">
+              <img class="carnet-bg" src="assets/carnet-droite.png" alt="Page de droite">
+              <div class="carnet-nametag6">
+                <div class="nametag-container">
+                  <h2 class="carnet-nametag-text">Victor le pic vert</h2>
+                  <img class="carnet-nametag-img" src="assets/nametag.png" alt="">
+                </div>
+              </div>
+              <img class="carnet-animaux" src="assets/animal-9.png" alt="">
+            </div>            
+          </div>
+          <div class="controls">
+            <div class="controls-left">
+              <button class="carnet-btn" id="prev" disabled></button>
+              <img class="left-arrow" src="assets/left-arrow.png" alt="">
+            </div>
+            <div class="controls-right">
+              <button class="carnet-btn" id="next"></button>
+              <img class="right-arrow" src="assets/right-arrow.png" alt="">
+            </div>
+          </div>
+        </div>
+        <!------------------CRAFT------------------>
+        <div class="craft">
+          <div class="craft-overlay">
+            <button class="craft-btn-close" aria-label="Fermer le craft">
+              <img src="assets/inventory-croix.png" alt="Fermer">
+            </button>
+            <div class="craft-container">
+                <div class="craft-slot" data-slot="ingredient"><img src="assets/paper.png" alt=""></div>
+                <div class="craft-slot" data-slot="outils"><img src="assets/paper.png" alt=""></div>
+                <div class="craft-slot" data-slot="result"><img src="assets/paper.png" alt=""></div>
+            </div>
+            <div class="craft-btn-combine">
+                <img src="assets/pencil-case.png" class=" hover" alt="">
+                <img src="assets/pencil-case-black.png" alt="">
+                <p class="craft-btn-combine-text">Combiner</p>
+            </div>
+            <div class="craft-nametag">
+                <img src="assets/nametag.png" alt="">
+                <p class="craft-btn-combine-text">Établis</p>
+            </div>
+          </div>
+        </div>
+    </main>
+
+  </div>
+  <div id="dialogue-screen">
+    <div id ="introduction-scene" class="introduction-scene">
+      <img id="cloud1" class="cloud" src="assets/nuage.png" alt="nuage">
+      <img id="cloud2" class="cloud" src="assets/nuage.png" alt="nuage">
+      <img id="cloud3" class="cloud" src="assets/nuage.png" alt="nuage">
+      <img id="cloud4" class="cloud" src="assets/nuage.png" alt="nuage">
+      <img class="introduction-forest" src="assets/forest.png" alt="forest">
+      <img class="blackscreen" src="assets/blackscreen.png" alt="forest">
+    </div>
+    <div id="transition-container" class="hidden">
+      <img id="transition-frame" src="" alt="transition frame">
+    </div>
+    <button id="continue-btn" class="point hidden"></button>
+    <div class="dialogue-container">
+        <div class="dialogue-box voix-off">
+            <div class="dialogue-text-container">
+                    <img src="assets/dialogue_box.png" alt="Image de fond">
+                    <div class="text-voix-off dialogue-text-character" id="text-voix-off">Chargement…</div>
+            </div>
+            <img class="arrow" src="assets/arrow 5.png" alt="arrow">
+        </div>
+        <div class="dialogue-box victor">
+            <div class="dialogue-nametag">
+                <img src="assets/nametag.png" alt="nametag">
+                <p class="name-overlay">Victor</p>
+            </div>
+            <div class="dialogue-text-container">
+                <img src="assets/dialogue_box.png" alt="Image de fond">
+                <div class="text-victor dialogue-text-character" id="text-victor">Chargement…</div>
+            </div>
+            <img class="image_kadett" src="assets/kadett.png" alt="hector">
+            <img class="arrow" src="assets/arrow 5.png" alt="arrow">
+        </div>
+        <div class="dialogue-box kadett">
+            <div class="dialogue-nametag">
+                <img src="assets/nametag.png" alt="nametag">
+                <p class="name-overlay">Kadette</p>
+            </div>
+            <div class="dialogue-text-container">
+                <img src="assets/dialogue_box.png" alt="Image de fond">
+                <div class="text-kadett dialogue-text-character" id="text-kadett">Chargement…</div>
+            </div>
+            <img class="image_kadett" src="assets/kadett.png" alt="hector">
+            <img class="arrow" src="assets/arrow 5.png" alt="arrow">
+        </div>
+        <div class="dialogue-box hector">
+            <div class="dialogue-nametag">
+                <img src="assets/nametag.png" alt="nametag">
+                <p class="name-overlay">Hector</p>
+            </div>
+            <div class="dialogue-text-container">
+                <img src="assets/dialogue_box.png" alt="Image de fond">
+                <div class="text-hector dialogue-text-character" id="text-hector">Chargement…</div>
+            </div>
+            <img class="image_hector" src="assets/hector.png" alt="hector">
+            <img class="arrow" src="assets/arrow 5.png" alt="arrow">
+        </div>
+        <!--décors scene intro-->
+    </div>
+  </div>
+
+</body>
+</html>
